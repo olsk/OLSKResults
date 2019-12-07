@@ -35,7 +35,7 @@ const mod = {
 
 {#if OLSKResultsListItems.length}
 	<div class="OLSKResultsList">
-		{#each OLSKResultsListItems as e,index}
+		{#each OLSKResultsListItems as e}
 			<div class="OLSKResultsListItem" class:OLSKResultsListItemSelected={ e === OLSKResultsListItemSelected } on:click={ () => OLSKResultsDispatchClick(e) }>
 				<slot OLSKResultsListItem={ e }></slot>
 			</div>
