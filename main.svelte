@@ -50,7 +50,7 @@ const mod = {
 </div>
 
 <style>
-.OLSKResultsItem {
+.OLSKResultsListItem {
 	cursor: pointer;
 }
 </style>
