@@ -21,6 +21,8 @@ const mod = {
 
 	TestItemSelected: null,
 
+	OLSKResultsEnableLooping: false,
+
 };
 
 import Module from './main.svelte';
@@ -31,6 +33,7 @@ import Module from './main.svelte';
 	OLSKResultsListItemSelected={ mod.TestItemSelected }
 	OLSKResultsDispatchArrow={ mod.OLSKResultsDispatchArrow }
 	OLSKResultsDispatchClick={ mod.OLSKResultsDispatchClick }
+	OLSKResultsEnableLooping={ mod.OLSKResultsEnableLooping }
 	let:OLSKResultsListItem={ item }
 	>
 	<div>{ item }</div>
@@ -60,6 +63,12 @@ import Module from './main.svelte';
 	<button id="TestSetTestItemsZero" on:click={ () => mod.TestItems = [] }>Zero</button>
 	<button id="TestSetTestItemsSingle" on:click={ () => mod.TestItems = ['alfa'] }>Single</button>
 	<button id="TestSetTestItemsMultiple" on:click={ () => mod.TestItems = ['alfa','bravo','charlie'] }>Multiple</button>
+</p>
+
+<p>
+	<strong>TestOLSKResultsEnableLooping</strong>
+	<button on:click={ () => mod.OLSKResultsEnableLooping = !mod.OLSKResultsEnableLooping } id="TestSetOLSKResultsEnableLooping">Toggle</button>
+	<span id="TestOLSKResultsEnableLooping">{ mod.OLSKResultsEnableLooping }</span>
 </p>
 
 <style>

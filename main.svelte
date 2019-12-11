@@ -3,6 +3,7 @@ export let OLSKResultsListItems;
 export let OLSKResultsListItemSelected;
 export let OLSKResultsDispatchArrow;
 export let OLSKResultsDispatchClick;
+export let OLSKResultsEnableLooping = false;
 
 import OLSKResultsLogic from './ui-logic.js';
 
@@ -19,11 +20,19 @@ const mod = {
 	InterfaceWindowDidKeydown(event) {
 		const handlerFunctions = {
 			ArrowUp () {
+				if (!OLSKResultsEnableLooping && !OLSKResultsListItems.indexOf(OLSKResultsListItemSelected)) {
+					return event.preventDefault();
+				}
+				
 				mod.MessageArrowIncrement(-1);
 
 				return event.preventDefault();
 			},
 			ArrowDown () {
+				if (!OLSKResultsEnableLooping && (OLSKResultsListItems.indexOf(OLSKResultsListItemSelected) === OLSKResultsListItems.length - 1)) {
+					return event.preventDefault();
+				}
+
 				mod.MessageArrowIncrement(1);
 				
 				return event.preventDefault();
