@@ -8,17 +8,23 @@ import OLSKResultsLogic from './ui-logic.js';
 
 const mod = {
 
+	// MESSAGE
+
+	MessageArrowIncrement (inputData) {
+		OLSKResultsDispatchArrow(OLSKResultsListItems[OLSKResultsLogic.OLSKResultsConstrainIndex(OLSKResultsListItems, OLSKResultsListItems.indexOf(OLSKResultsListItemSelected) + inputData)]);
+	},
+
 	// INTERFACE
 
 	InterfaceWindowDidKeydown(event) {
 		const handlerFunctions = {
 			ArrowUp () {
-				OLSKResultsDispatchArrow(OLSKResultsListItems[OLSKResultsLogic.OLSKResultsConstrainIndex(OLSKResultsListItems, OLSKResultsListItems.indexOf(OLSKResultsListItemSelected) - 1)]);
+				mod.MessageArrowIncrement(-1);
 
 				return event.preventDefault();
 			},
 			ArrowDown () {
-				OLSKResultsDispatchArrow(OLSKResultsListItems[OLSKResultsLogic.OLSKResultsConstrainIndex(OLSKResultsListItems, OLSKResultsListItems.indexOf(OLSKResultsListItemSelected) + 1)]);
+				mod.MessageArrowIncrement(1);
 				
 				return event.preventDefault();
 			},
