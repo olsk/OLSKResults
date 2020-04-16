@@ -31,7 +31,7 @@ describe('OLSKResults_Misc', function () {
 			browser.pressButton('#TestSetTestItemSelected');
 		});
 
-		it('sets class', function() {
+		it('classes OLSKResultsListItemSelected', function() {
 			browser.assert.elements('.OLSKResultsListItemSelected', 1);
 			browser.assert.text('.OLSKResultsListItemSelected', 'bravo');
 		});
@@ -48,7 +48,7 @@ describe('OLSKResults_Misc', function () {
 			return browser.OLSKFireKeyboardEvent(browser.window, 'ArrowDown');
 		});
 
-		it('sets class', function() {
+		it('classes OLSKResultsListItemSelected', function() {
 			browser.assert.elements('.OLSKResultsListItemSelected', 1);
 			browser.assert.text('.OLSKResultsListItemSelected', 'charlie');
 		});
@@ -69,7 +69,7 @@ describe('OLSKResults_Misc', function () {
 			return browser.OLSKFireKeyboardEvent(browser.window, 'ArrowUp');
 		});
 
-		it('sets class', function() {
+		it('classes OLSKResultsListItemSelected', function() {
 			browser.assert.elements('.OLSKResultsListItemSelected', 1);
 			browser.assert.text('.OLSKResultsListItemSelected', 'bravo');
 		});
@@ -106,7 +106,7 @@ describe('OLSKResults_Misc', function () {
 			return browser.click(OLSKResultsListItem);
 		});
 
-		it('sets class', function () {
+		it('classes OLSKResultsListItemSelected', function () {
 			browser.assert.elements('.OLSKResultsListItemSelected', 1);
 			browser.assert.text('.OLSKResultsListItemSelected', 'alfa');
 		});
