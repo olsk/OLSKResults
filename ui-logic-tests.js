@@ -2,7 +2,7 @@ const { throws, deepEqual } = require('assert');
 
 const mainModule = require('./ui-logic.js');
 
-describe('OLSKResultsConstrainIndex', function testOLSKResultsConstrainIndex() {
+describe('OLSKResultsConstrainIndex', function test_OLSKResultsConstrainIndex() {
 
 	it('throws error if param1 not array', function() {
 		throws(function() {
