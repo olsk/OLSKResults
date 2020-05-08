@@ -7,6 +7,7 @@ const mod = {
 		mod.TestItemSelected = inputData;
 
 		window.TestOLSKResultsDispatchArrow.innerHTML = parseInt(window.TestOLSKResultsDispatchArrow.innerHTML) + 1;
+		window.TestOLSKResultsDispatchArrowData.innerHTML = inputData;
 	},
 
 	OLSKResultsDispatchClick (inputData) {
@@ -44,7 +45,8 @@ import Module from './main.svelte';
 
 <p>
 	<strong>OLSKResultsListItemSelected</strong>
-	<button id="TestSetOLSKResultsListItemSelected" on:click={ () => mod.TestItemSelected = 'bravo' }>Set</button>
+	<button id="TestSetOLSKResultsListItemSelectedNull" on:click={ () => mod.TestItemSelected = null }>null</button>
+	<button id="TestSetOLSKResultsListItemSelectedBravo" on:click={ () => mod.TestItemSelected = 'bravo' }>'bravo'</button>
 	<span id="TestItemSelected">{ mod.TestItemSelected }</span>
 </p>
 
@@ -66,6 +68,7 @@ import Module from './main.svelte';
 <p>
 	<strong>TestOLSKResultsDispatchArrow</strong>
 	<span id="TestOLSKResultsDispatchArrow">0</span>
+	<span id="TestOLSKResultsDispatchArrowData">undefined</span>
 </p>
 
 <p>

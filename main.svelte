@@ -20,20 +20,32 @@ const mod = {
 	InterfaceWindowDidKeydown(event) {
 		const handlerFunctions = {
 			ArrowUp () {
-				if (!OLSKResultsEnableLooping && !OLSKResultsListItems.indexOf(OLSKResultsListItemSelected)) {
-					return event.preventDefault();
-				}
-				
-				mod.MessageArrowIncrement(-1);
+				(function() {
+					if (!OLSKResultsListItems.length) {
+						return;
+					}
+
+					if (!OLSKResultsEnableLooping && OLSKResultsListItems[0] === OLSKResultsListItemSelected) {
+						return;
+					}
+					
+					mod.MessageArrowIncrement(-1);
+				})();
 
 				return event.preventDefault();
 			},
 			ArrowDown () {
-				if (!OLSKResultsEnableLooping && (OLSKResultsListItems.indexOf(OLSKResultsListItemSelected) === OLSKResultsListItems.length - 1)) {
-					return event.preventDefault();
-				}
+				(function() {
+					if (!OLSKResultsListItems.length) {
+						return;
+					}
 
-				mod.MessageArrowIncrement(1);
+					if (!OLSKResultsEnableLooping && (OLSKResultsListItems.slice(-1).pop() === OLSKResultsListItemSelected)) {
+						return;
+					}
+
+					mod.MessageArrowIncrement(1);
+				})();
 				
 				return event.preventDefault();
 			},

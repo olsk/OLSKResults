@@ -11,10 +11,10 @@ describe('OLSKResults_Misc', function () {
 		browser.assert.text('#TestItemSelected', 'null');
 	});
 
-	context('set initial', function () {
+	describe('set_OLSKResultsListItems', function () {
 
 		before(function() {
-			browser.pressButton('#TestSetOLSKResultsListItemsMultiple');
+			return browser.pressButton('#TestSetOLSKResultsListItemsMultiple');
 		});
 
 		it('selects none', function() {
@@ -23,69 +23,164 @@ describe('OLSKResults_Misc', function () {
 
 	});
 
-	context('select', function () {
+	describe('set_OLSKResultsListItemSelected', function () {
 	
 		before(function () {
-			browser.pressButton('#TestSetOLSKResultsListItemSelected');
+			return browser.pressButton('#TestSetOLSKResultsListItemSelectedBravo');
 		});
 
 		it('classes OLSKResultsListItemSelected', function() {
-			browser.assert.elements('.OLSKResultsListItemSelected', 1);
 			browser.assert.text('.OLSKResultsListItemSelected', 'bravo');
 		});
 
 	});
 
-	context('ArrowDown', function () {
+	describe('ArrowDown', function () {
 
-		before(function () {
-			browser.assert.text('#TestOLSKResultsDispatchArrow', '0');
-		});
-	
-		before(function () {
-			return browser.OLSKFireKeyboardEvent(browser.window, 'ArrowDown');
+		context('no items', function () {
+			
+			before(function () {
+				return browser.pressButton('#TestSetOLSKResultsListItemsZero');
+			});
+			
+			before(function () {
+				return browser.pressButton('#TestSetOLSKResultsListItemSelectedNull');
+			});
+			
+			before(function () {
+				browser.assert.text('#TestOLSKResultsDispatchArrow', '0');
+				browser.assert.text('#TestOLSKResultsDispatchArrowData', 'undefined');
+			});
+
+			before(function () {
+				return browser.OLSKFireKeyboardEvent(browser.window, 'ArrowDown');
+			});
+
+			it('sends no OLSKResultsDispatchArrow', function() {
+				browser.assert.text('#TestOLSKResultsDispatchArrow', '0');
+			});
+		
 		});
 
-		it('classes OLSKResultsListItemSelected', function() {
-			browser.assert.elements('.OLSKResultsListItemSelected', 1);
-			browser.assert.text('.OLSKResultsListItemSelected', 'charlie');
+		context('no selection', function () {
+			
+			before(function () {
+				return browser.pressButton('#TestSetOLSKResultsListItemsMultiple');
+			});
+
+			before(function () {
+				browser.assert.text('#TestOLSKResultsDispatchArrow', '0');
+			});
+
+			before(function () {
+				return browser.OLSKFireKeyboardEvent(browser.window, 'ArrowDown');
+			});
+
+			it('sends OLSKResultsDispatchArrow', function() {
+				browser.assert.text('#TestOLSKResultsDispatchArrow', '1');
+				browser.assert.text('#TestOLSKResultsDispatchArrowData', 'alfa');
+			});
+		
 		});
 
-		it('sends ResultListDispatchArrow', function() {
-			browser.assert.text('#TestOLSKResultsDispatchArrow', '1');
-		});
+		context('selection', function () {
+			
+			before(function () {
+				return browser.pressButton('#TestSetOLSKResultsListItemSelectedBravo');
+			});
 
-		it('sends detail', function() {
-			browser.assert.text('#TestItemSelected', 'charlie');
+			before(function () {
+				return browser.OLSKFireKeyboardEvent(browser.window, 'ArrowDown');
+			});
+
+			it('sends OLSKResultsDispatchArrow', function() {
+				browser.assert.text('#TestOLSKResultsDispatchArrow', '2');
+				browser.assert.text('#TestItemSelected', 'charlie');
+			});
+		
 		});
 
 	});
 
-	context('ArrowUp', function () {
+	describe('ArrowUp', function () {
 	
-		before(function () {
-			return browser.OLSKFireKeyboardEvent(browser.window, 'ArrowUp');
+		context('no items', function () {
+			
+			before(function () {
+				return browser.pressButton('#TestSetOLSKResultsListItemsZero');
+			});
+			
+			before(function () {
+				return browser.pressButton('#TestSetOLSKResultsListItemSelectedNull');
+			});
+			
+			before(function () {
+				browser.assert.text('#TestOLSKResultsDispatchArrow', '2');
+				browser.assert.text('#TestOLSKResultsDispatchArrowData', 'charlie');
+			});
+
+			before(function () {
+				return browser.OLSKFireKeyboardEvent(browser.window, 'ArrowUp');
+			});
+
+			it('sends no OLSKResultsDispatchArrow', function() {
+				browser.assert.text('#TestOLSKResultsDispatchArrow', '2');
+			});
+		
 		});
 
-		it('classes OLSKResultsListItemSelected', function() {
-			browser.assert.elements('.OLSKResultsListItemSelected', 1);
-			browser.assert.text('.OLSKResultsListItemSelected', 'bravo');
+		context('no selection', function () {
+			
+			before(function () {
+				return browser.pressButton('#TestSetOLSKResultsListItemsMultiple');
+			});
+
+			before(function () {
+				browser.assert.text('#TestOLSKResultsDispatchArrow', '2');
+			});
+
+			before(function () {
+				return browser.OLSKFireKeyboardEvent(browser.window, 'ArrowUp');
+			});
+
+			it('sends OLSKResultsDispatchArrow', function() {
+				browser.assert.text('#TestOLSKResultsDispatchArrow', '3');
+				browser.assert.text('#TestOLSKResultsDispatchArrowData', 'charlie');
+			});
+		
 		});
 
-		it('sends ResultListDispatchArrow', function() {
-			browser.assert.text('#TestOLSKResultsDispatchArrow', '2');
-		});
+		context('selection', function () {
+			
+			before(function () {
+				return browser.pressButton('#TestSetOLSKResultsListItemSelectedBravo');
+			});
 
-		it('sends detail', function() {
-			browser.assert.text('#TestItemSelected', 'bravo');
+			before(function () {
+				return browser.OLSKFireKeyboardEvent(browser.window, 'ArrowUp');
+			});
+
+			it('sends OLSKResultsDispatchArrow', function() {
+				browser.assert.text('#TestOLSKResultsDispatchArrow', '4');
+				browser.assert.text('#TestItemSelected', 'alfa');
+			});
+		
 		});
 
 	});
 
-	context('change items exclude selected', function () {
+	describe('change items exclude selected', function () {
 	
 		before(function () {
-			browser.pressButton('#TestSetOLSKResultsListItemsSingle');
+			return browser.pressButton('#TestSetOLSKResultsListItemsMultiple');
+		});
+
+		before(function () {
+			return browser.pressButton('#TestSetOLSKResultsListItemSelectedBravo');
+		});
+
+		before(function () {
+			return browser.pressButton('#TestSetOLSKResultsListItemsSingle');
 		});
 
 		it('selects none', function () {
@@ -94,7 +189,7 @@ describe('OLSKResults_Misc', function () {
 
 	});
 
-	context('click item', function () {
+	describe('click item', function () {
 
 		before(function () {
 			browser.assert.text('#TestOLSKResultsDispatchClick', '0');
@@ -119,10 +214,10 @@ describe('OLSKResults_Misc', function () {
 
 	});
 
-	context('set items include selected', function () {
+	describe('set items include selected', function () {
 
 		before(function () {
-			browser.pressButton('#TestSetOLSKResultsListItemsSingle');
+			return browser.pressButton('#TestSetOLSKResultsListItemsSingle');
 		});
 	
 		it('keeps previous selection', function () {
@@ -131,7 +226,7 @@ describe('OLSKResults_Misc', function () {
 
 	});
 
-	context('ArrowUp on first item', function () {
+	describe('ArrowUp on first item', function () {
 
 		before(function () {
 			return browser.pressButton('#TestSetOLSKResultsListItemsMultiple');
@@ -168,7 +263,7 @@ describe('OLSKResults_Misc', function () {
 
 	});
 
-	context('ArrowDown on last item', function () {
+	describe('ArrowDown on last item', function () {
 	
 		before(function () {
 			return browser.OLSKFireKeyboardEvent(browser.window, 'ArrowDown');
