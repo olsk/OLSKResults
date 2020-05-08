@@ -43,10 +43,25 @@ import Module from './main.svelte';
 <hr>
 
 <p>
-	<strong>TestItemSelected</strong>
-	<button on:click={ () => mod.TestItemSelected = 'bravo' } id="TestSetTestItemSelected">Set</button>
+	<strong>OLSKResultsListItemSelected</strong>
+	<button id="TestSetOLSKResultsListItemSelected" on:click={ () => mod.TestItemSelected = 'bravo' }>Set</button>
 	<span id="TestItemSelected">{ mod.TestItemSelected }</span>
 </p>
+
+<p>
+	<strong>OLSKResultsListItems</strong>
+	<button id="TestSetOLSKResultsListItemsZero" on:click={ () => mod.TestItems = [] }>Zero</button>
+	<button id="TestSetOLSKResultsListItemsSingle" on:click={ () => mod.TestItems = ['alfa'] }>Single</button>
+	<button id="TestSetOLSKResultsListItemsMultiple" on:click={ () => mod.TestItems = ['alfa','bravo','charlie'] }>Multiple</button>
+</p>
+
+<p>
+	<strong>TestOLSKResultsEnableLooping</strong>
+	<button on:click={ () => mod.OLSKResultsEnableLooping = !mod.OLSKResultsEnableLooping } id="TestSetOLSKResultsEnableLooping">Toggle</button>
+	<span id="TestOLSKResultsEnableLooping">{ mod.OLSKResultsEnableLooping }</span>
+</p>
+
+<hr>
 
 <p>
 	<strong>TestOLSKResultsDispatchArrow</strong>
@@ -56,19 +71,6 @@ import Module from './main.svelte';
 <p>
 	<strong>TestOLSKResultsDispatchClick</strong>
 	<span id="TestOLSKResultsDispatchClick">0</span>
-</p>
-
-<p>
-	<strong>TestItems</strong>
-	<button id="TestSetTestItemsZero" on:click={ () => mod.TestItems = [] }>Zero</button>
-	<button id="TestSetTestItemsSingle" on:click={ () => mod.TestItems = ['alfa'] }>Single</button>
-	<button id="TestSetTestItemsMultiple" on:click={ () => mod.TestItems = ['alfa','bravo','charlie'] }>Multiple</button>
-</p>
-
-<p>
-	<strong>TestOLSKResultsEnableLooping</strong>
-	<button on:click={ () => mod.OLSKResultsEnableLooping = !mod.OLSKResultsEnableLooping } id="TestSetOLSKResultsEnableLooping">Toggle</button>
-	<span id="TestOLSKResultsEnableLooping">{ mod.OLSKResultsEnableLooping }</span>
 </p>
 
 <style>

@@ -14,7 +14,7 @@ describe('OLSKResults_Misc', function () {
 	context('set initial', function () {
 
 		before(function() {
-			browser.pressButton('#TestSetTestItemsMultiple');
+			browser.pressButton('#TestSetOLSKResultsListItemsMultiple');
 		});
 
 		it('selects none', function() {
@@ -26,7 +26,7 @@ describe('OLSKResults_Misc', function () {
 	context('select', function () {
 	
 		before(function () {
-			browser.pressButton('#TestSetTestItemSelected');
+			browser.pressButton('#TestSetOLSKResultsListItemSelected');
 		});
 
 		it('classes OLSKResultsListItemSelected', function() {
@@ -85,7 +85,7 @@ describe('OLSKResults_Misc', function () {
 	context('change items exclude selected', function () {
 	
 		before(function () {
-			browser.pressButton('#TestSetTestItemsSingle');
+			browser.pressButton('#TestSetOLSKResultsListItemsSingle');
 		});
 
 		it('selects none', function () {
@@ -122,7 +122,7 @@ describe('OLSKResults_Misc', function () {
 	context('set items include selected', function () {
 
 		before(function () {
-			browser.pressButton('#TestSetTestItemsSingle');
+			browser.pressButton('#TestSetOLSKResultsListItemsSingle');
 		});
 	
 		it('keeps previous selection', function () {
@@ -134,7 +134,7 @@ describe('OLSKResults_Misc', function () {
 	context('ArrowUp on first item', function () {
 
 		before(function () {
-			return browser.pressButton('#TestSetTestItemsMultiple');
+			return browser.pressButton('#TestSetOLSKResultsListItemsMultiple');
 		});
 	
 		before(function () {

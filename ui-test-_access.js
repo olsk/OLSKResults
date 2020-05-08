@@ -42,7 +42,7 @@ describe('OLSKResults_Access', function () {
 	context('set single', function() {
 
 		before(function () {
-			return browser.pressButton('#TestSetTestItemsSingle');	
+			return browser.pressButton('#TestSetOLSKResultsListItemsSingle');	
 		});
 		
 		it('shows OLSKResultsList', function () {
@@ -62,7 +62,7 @@ describe('OLSKResults_Access', function () {
 	context('set multiple', function() {
 
 		before(function () {
-			return browser.pressButton('#TestSetTestItemsMultiple');	
+			return browser.pressButton('#TestSetOLSKResultsListItemsMultiple');	
 		});
 
 		it('shows OLSKResultsListItem', function () {
@@ -78,7 +78,7 @@ describe('OLSKResults_Access', function () {
 	context('set zero', function() {
 
 		before(function () {
-			return browser.pressButton('#TestSetTestItemsZero');	
+			return browser.pressButton('#TestSetOLSKResultsListItemsZero');	
 		});
 
 		it('hides OLSKResultsList', function () {
