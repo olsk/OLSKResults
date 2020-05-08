@@ -9,12 +9,6 @@ import OLSKResultsLogic from './ui-logic.js';
 
 const mod = {
 
-	// MESSAGE
-
-	MessageArrowIncrement (inputData) {
-		OLSKResultsDispatchArrow(OLSKResultsListItems[OLSKResultsLogic.OLSKResultsConstrainIndex(OLSKResultsListItems, OLSKResultsListItems.indexOf(OLSKResultsListItemSelected) + inputData)]);
-	},
-
 	// INTERFACE
 
 	InterfaceWindowDidKeydown(event) {
@@ -29,7 +23,7 @@ const mod = {
 						return;
 					}
 					
-					mod.MessageArrowIncrement(-1);
+					mod.ControlArrowIncrement(-1);
 				})();
 
 				return event.preventDefault();
@@ -44,7 +38,7 @@ const mod = {
 						return;
 					}
 
-					mod.MessageArrowIncrement(1);
+					mod.ControlArrowIncrement(1);
 				})();
 				
 				return event.preventDefault();
@@ -52,6 +46,12 @@ const mod = {
 		};
 
 		handlerFunctions[event.code] && handlerFunctions[event.code]();
+	},
+
+	// CONTROL
+
+	ControlArrowIncrement (inputData) {
+		OLSKResultsDispatchArrow(OLSKResultsListItems[OLSKResultsLogic.OLSKResultsConstrainIndex(OLSKResultsListItems, OLSKResultsListItems.indexOf(OLSKResultsListItemSelected) + inputData)]);
 	},
 
 };
