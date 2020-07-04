@@ -1,6 +1,14 @@
 <script>
 const mod = {
 
+	// VALUE
+
+	TestItems: [],
+
+	TestItemSelected: null,
+
+	OLSKResultsEnableLooping: false,
+
 	// MESSAGE
 
 	OLSKResultsDispatchArrow (inputData) {
@@ -15,14 +23,6 @@ const mod = {
 
 		window.TestOLSKResultsDispatchClick.innerHTML = parseInt(window.TestOLSKResultsDispatchClick.innerHTML) + 1;
 	},
-
-	// VALUE
-
-	TestItems: [],
-
-	TestItemSelected: null,
-
-	OLSKResultsEnableLooping: false,
 
 };
 
