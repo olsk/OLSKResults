@@ -17,13 +17,13 @@ const mod = {
 			return;
 		}
 		
+		if (!OLSKResultsListItems.length) {
+			return;
+		}
+
 		const handlerFunctions = {
 			ArrowUp () {
 				(function() {
-					if (!OLSKResultsListItems.length) {
-						return;
-					}
-
 					if (!OLSKResultsEnableLooping && OLSKResultsListItems[0] === OLSKResultsListItemSelected) {
 						return;
 					}
@@ -35,10 +35,6 @@ const mod = {
 			},
 			ArrowDown () {
 				(function() {
-					if (!OLSKResultsListItems.length) {
-						return;
-					}
-
 					if (!OLSKResultsEnableLooping && (OLSKResultsListItems.slice(-1).pop() === OLSKResultsListItemSelected)) {
 						return;
 					}
