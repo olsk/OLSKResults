@@ -4,6 +4,7 @@ export let OLSKResultsListItemSelected;
 export let OLSKResultsDispatchArrow;
 export let OLSKResultsDispatchClick;
 export let OLSKResultsEnableLooping = false;
+export let OLSKResultsIgnoreKeyboard = false;
 
 import OLSKResultsLogic from './ui-logic.js';
 
@@ -12,6 +13,10 @@ const mod = {
 	// INTERFACE
 
 	InterfaceWindowDidKeydown(event) {
+		if (OLSKResultsIgnoreKeyboard) {
+			return;
+		}
+		
 		const handlerFunctions = {
 			ArrowUp () {
 				(function() {

@@ -36,6 +36,13 @@ import Module from './main.svelte';
 	OLSKResultsDispatchClick={ mod.OLSKResultsDispatchClick }
 	OLSKResultsEnableLooping={ mod.OLSKResultsEnableLooping }
 	let:OLSKResultsListItem={ item }
+	{ ...Object.fromEntries(Array.from((new window.URLSearchParams(window.location.search)).entries()).map(function (e, index, coll) {
+		if (['OLSKResultsIgnoreKeyboard'].includes(e[0])) {
+			e[1] = JSON.parse(e[1]);
+		}
+
+		return e;
+	})) }
 	>
 	<div>{ item }</div>
 	<em slot="OLSKResultsEmpty" class="TestOLSKResultsEmptySlot">TestItemsZero</em>

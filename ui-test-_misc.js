@@ -296,4 +296,54 @@ describe('OLSKResults_Misc', function () {
 
 	});
 
+	describe('OLSKResultsIgnoreKeyboard', function() {
+
+		before(function() {
+			return browser.OLSKVisit(kDefaultRoute, {
+				OLSKResultsIgnoreKeyboard: true,
+			});
+		});
+
+		before(function () {
+			return browser.pressButton('#TestSetOLSKResultsListItemsMultiple');
+		});
+
+		before(function () {
+			return browser.pressButton('#TestSetOLSKResultsListItemSelectedNull');
+		});
+		
+		context('ArrowDown', function () {
+
+			before(function () {
+				browser.assert.text('#TestOLSKResultsDispatchArrow', '0');
+			});
+
+			before(function () {
+				return browser.OLSKFireKeyboardEvent(browser.window, 'ArrowDown');
+			});
+
+			it('sends no OLSKResultsDispatchArrow', function() {
+				browser.assert.text('#TestOLSKResultsDispatchArrow', '0');
+			});
+		
+		});
+		
+		context('ArrowUp', function () {
+
+			before(function () {
+				browser.assert.text('#TestOLSKResultsDispatchArrow', '0');
+			});
+
+			before(function () {
+				return browser.OLSKFireKeyboardEvent(browser.window, 'ArrowUp');
+			});
+
+			it('sends no OLSKResultsDispatchArrow', function() {
+				browser.assert.text('#TestOLSKResultsDispatchArrow', '0');
+			});
+		
+		});
+
+	});
+
 });
