@@ -65,7 +65,7 @@ import Module from './main.svelte';
 </p>
 
 <p>
-	<strong>TestOLSKResultsEnableLooping</strong>
+	<strong>OLSKResultsEnableLooping</strong>
 	<button on:click={ () => mod.OLSKResultsEnableLooping = !mod.OLSKResultsEnableLooping } id="TestSetOLSKResultsEnableLooping">Toggle</button>
 	<span id="TestOLSKResultsEnableLooping">{ mod.OLSKResultsEnableLooping }</span>
 </p>
@@ -73,13 +73,13 @@ import Module from './main.svelte';
 <hr>
 
 <p>
-	<strong>TestOLSKResultsDispatchArrow</strong>
+	<strong>OLSKResultsDispatchArrow</strong>
 	<span id="TestOLSKResultsDispatchArrow">0</span>
 	<span id="TestOLSKResultsDispatchArrowData">undefined</span>
 </p>
 
 <p>
-	<strong>TestOLSKResultsDispatchClick</strong>
+	<strong>OLSKResultsDispatchClick</strong>
 	<span id="TestOLSKResultsDispatchClick">0</span>
 </p>
 
