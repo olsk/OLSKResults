@@ -48,7 +48,7 @@ import Module from './main.svelte';
 	<em slot="OLSKResultsEmpty" class="TestOLSKResultsEmptySlot">TestItemsZero</em>
 </Module>
 
-<hr>
+<hr role="presentation" />
 
 <p>
 	<strong>OLSKResultsListItemSelected</strong>
@@ -70,7 +70,7 @@ import Module from './main.svelte';
 	<span id="TestOLSKResultsEnableLooping">{ mod.OLSKResultsEnableLooping }</span>
 </p>
 
-<hr>
+<hr role="presentation" />
 
 <p>
 	<strong>OLSKResultsDispatchArrow</strong>
