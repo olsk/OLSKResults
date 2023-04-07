@@ -18,23 +18,23 @@ describe('OLSKResults_Access', function () {
 	});
 	
 	it('shows OLSKResults', function () {
-		browser.assert.elements(OLSKResults, 1);
+		return browser.assert.elements(OLSKResults, 1);
 	});
 	
 	it('hides OLSKResultsList', function () {
-		browser.assert.elements(OLSKResultsList, 0);
+		return browser.assert.elements(OLSKResultsList, 0);
 	});
 
 	it('hides OLSKResultsListItem', function () {
-		browser.assert.elements(OLSKResultsListItem, 0);
+		return browser.assert.elements(OLSKResultsListItem, 0);
 	});
 	
 	it('shows OLSKResultsEmpty', function () {
-	 	browser.assert.elements(OLSKResultsEmpty, 1);
+	 	return browser.assert.elements(OLSKResultsEmpty, 1);
 	});
 	
 	it('shows TestOLSKResultsEmptySlot', function () {
-	 	browser.assert.elements('.TestOLSKResultsEmptySlot', 1);
+	 	return browser.assert.elements('.TestOLSKResultsEmptySlot', 1);
 	});
 
 	context('set single', function() {
@@ -44,15 +44,15 @@ describe('OLSKResults_Access', function () {
 		});
 		
 		it('shows OLSKResultsList', function () {
-		 	browser.assert.elements(OLSKResultsList, 1);
+		 	return browser.assert.elements(OLSKResultsList, 1);
 		});
 		
 		it('shows OLSKResultsListItem', function () {
-		 	browser.assert.elements(OLSKResultsListItem, 1);
+		 	return browser.assert.elements(OLSKResultsListItem, 1);
 		});
 		
 		it('hides OLSKResultsEmpty', function () {
-			browser.assert.elements(OLSKResultsEmpty, 0);
+			return browser.assert.elements(OLSKResultsEmpty, 0);
 		});
 
 	});
@@ -64,11 +64,11 @@ describe('OLSKResults_Access', function () {
 		});
 
 		it('shows OLSKResultsListItem', function () {
-			browser.assert.elements(OLSKResultsListItem, 3);
+			return browser.assert.elements(OLSKResultsListItem, 3);
 		});
 		
 		it('hides OLSKResultsEmpty', function () {
-			browser.assert.elements(OLSKResultsEmpty, 0);
+			return browser.assert.elements(OLSKResultsEmpty, 0);
 		});
 
 	});
@@ -80,15 +80,15 @@ describe('OLSKResults_Access', function () {
 		});
 
 		it('hides OLSKResultsList', function () {
-			browser.assert.elements(OLSKResultsList, 0);
+			return browser.assert.elements(OLSKResultsList, 0);
 		});
 
 		it('hides OLSKResultsListItem', function () {
-			browser.assert.elements(OLSKResultsListItem, 0);
+			return browser.assert.elements(OLSKResultsListItem, 0);
 		});
 		
 		it('shows OLSKResultsEmpty', function () {
-		 	browser.assert.elements(OLSKResultsEmpty, 1);
+		 	return browser.assert.elements(OLSKResultsEmpty, 1);
 		});
 
 	});

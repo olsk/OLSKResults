@@ -18,7 +18,7 @@ describe('OLSKResults_Misc', function () {
 		});
 
 		it('selects none', function() {
-			browser.assert.elements('.OLSKResultsListItemSelected', 0);
+			return browser.assert.elements('.OLSKResultsListItemSelected', 0);
 		});
 
 	});
@@ -30,7 +30,7 @@ describe('OLSKResults_Misc', function () {
 		});
 
 		it('classes OLSKResultsListItemSelected', function() {
-			browser.assert.text('.OLSKResultsListItemSelected', 'bravo');
+			return browser.assert.text('.OLSKResultsListItemSelected', 'bravo');
 		});
 
 	});
@@ -57,7 +57,7 @@ describe('OLSKResults_Misc', function () {
 			});
 
 			it('sends no OLSKResultsDispatchArrow', function() {
-				browser.assert.text('#TestOLSKResultsDispatchArrow', '0');
+				return browser.assert.text('#TestOLSKResultsDispatchArrow', '0');
 			});
 		
 		});
@@ -69,7 +69,7 @@ describe('OLSKResults_Misc', function () {
 			});
 
 			before(function () {
-				browser.assert.text('#TestOLSKResultsDispatchArrow', '0');
+				return browser.assert.text('#TestOLSKResultsDispatchArrow', '0');
 			});
 
 			before(function () {
@@ -124,7 +124,7 @@ describe('OLSKResults_Misc', function () {
 			});
 
 			it('sends no OLSKResultsDispatchArrow', function() {
-				browser.assert.text('#TestOLSKResultsDispatchArrow', '2');
+				return browser.assert.text('#TestOLSKResultsDispatchArrow', '2');
 			});
 		
 		});
@@ -136,7 +136,7 @@ describe('OLSKResults_Misc', function () {
 			});
 
 			before(function () {
-				browser.assert.text('#TestOLSKResultsDispatchArrow', '2');
+				return browser.assert.text('#TestOLSKResultsDispatchArrow', '2');
 			});
 
 			before(function () {
@@ -184,7 +184,7 @@ describe('OLSKResults_Misc', function () {
 		});
 
 		it('selects none', function () {
-			browser.assert.elements('.OLSKResultsListItemSelected', 0);
+			return browser.assert.elements('.OLSKResultsListItemSelected', 0);
 		});
 
 	});
@@ -192,7 +192,7 @@ describe('OLSKResults_Misc', function () {
 	describe('click item', function () {
 
 		before(function () {
-			browser.assert.text('#TestOLSKResultsDispatchClick', '0');
+			return browser.assert.text('#TestOLSKResultsDispatchClick', '0');
 		});
 	
 		before(function () {
@@ -205,11 +205,11 @@ describe('OLSKResults_Misc', function () {
 		});
 
 		it('sends ResultListDispatchClick', function() {
-			browser.assert.text('#TestOLSKResultsDispatchClick', '1');
+			return browser.assert.text('#TestOLSKResultsDispatchClick', '1');
 		});
 
 		it('sends detail', function() {
-			browser.assert.text('#TestItemSelected', 'alfa');
+			return browser.assert.text('#TestItemSelected', 'alfa');
 		});
 
 	});
@@ -221,7 +221,7 @@ describe('OLSKResults_Misc', function () {
 		});
 	
 		it('keeps previous selection', function () {
-			browser.assert.text('.OLSKResultsListItemSelected', 'alfa');
+			return browser.assert.text('.OLSKResultsListItemSelected', 'alfa');
 		});
 
 	});
@@ -237,7 +237,7 @@ describe('OLSKResults_Misc', function () {
 		});
 	
 		it('keeps previous selection', function () {
-			browser.assert.text('.OLSKResultsListItemSelected', 'alfa');
+			return browser.assert.text('.OLSKResultsListItemSelected', 'alfa');
 		});
 
 		context('OLSKResultsEnableLooping', function () {
@@ -270,7 +270,7 @@ describe('OLSKResults_Misc', function () {
 		});
 	
 		it('keeps previous selection', function () {
-			browser.assert.text('.OLSKResultsListItemSelected', 'charlie');
+			return browser.assert.text('.OLSKResultsListItemSelected', 'charlie');
 		});
 
 		context('OLSKResultsEnableLooping', function () {
@@ -315,7 +315,7 @@ describe('OLSKResults_Misc', function () {
 		context('ArrowDown', function () {
 
 			before(function () {
-				browser.assert.text('#TestOLSKResultsDispatchArrow', '0');
+				return browser.assert.text('#TestOLSKResultsDispatchArrow', '0');
 			});
 
 			before(function () {
@@ -323,7 +323,7 @@ describe('OLSKResults_Misc', function () {
 			});
 
 			it('sends no OLSKResultsDispatchArrow', function() {
-				browser.assert.text('#TestOLSKResultsDispatchArrow', '0');
+				return browser.assert.text('#TestOLSKResultsDispatchArrow', '0');
 			});
 		
 		});
@@ -331,7 +331,7 @@ describe('OLSKResults_Misc', function () {
 		context('ArrowUp', function () {
 
 			before(function () {
-				browser.assert.text('#TestOLSKResultsDispatchArrow', '0');
+				return browser.assert.text('#TestOLSKResultsDispatchArrow', '0');
 			});
 
 			before(function () {
@@ -339,7 +339,7 @@ describe('OLSKResults_Misc', function () {
 			});
 
 			it('sends no OLSKResultsDispatchArrow', function() {
-				browser.assert.text('#TestOLSKResultsDispatchArrow', '0');
+				return browser.assert.text('#TestOLSKResultsDispatchArrow', '0');
 			});
 		
 		});
